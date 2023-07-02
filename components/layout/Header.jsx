@@ -9,6 +9,8 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import OutsideClickHandler from "react-outside-click-handler";
+import Title from "../ui/Title";
+import Search from "../ui/Search";
 const Header = () => {
       const [isSearchModal, setIsSearchModal] = useState(false);
 
@@ -34,26 +36,29 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+
         <div className="flex gap-x-4 items-center justify-center ">
+
           <button>
             <FaUser className="h-7  hover:text-sixth transition-all" />
           </button>
+          
           <button>
             <FaShoppingCart className="h-7 hover:text-sixth transition-all" />
           </button>
+
           <button onClick={() => setIsSearchModal(!isSearchModal)}>
             <FaSearch className="h-7  hover:text-sixth transition-all" />
           </button>
+
           <button className="btn-primary font-assistant text-[16px] font-medium hover:bg-white hover:text-teal-700 transition-all ">
             Online Sipariş
           </button>
+
         </div>
+
       </div>
-      {isSearchModal && (
-        <OutsideClickHandler onOutsideClick={()=> setIsSearchModal(false)}>
-          <div className="w-40 h-40 bg- bg-sixth ">Modal Section </div>
-        </OutsideClickHandler>
-      )}
+      {isSearchModal && <Search setIsSearchModal={setIsSearchModal} />}
     </div>
   );
 };

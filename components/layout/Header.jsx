@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../ui/Logo";
 import { AiOutlineUser } from "react-icons/ai";
 import {
@@ -8,7 +8,10 @@ import {
   FaShoppingCart,
   FaSearch,
 } from "react-icons/fa";
+import OutsideClickHandler from "react-outside-click-handler";
 const Header = () => {
+      const [isSearchModal, setIsSearchModal] = useState(false);
+
   return (
     <div className="h-[5rem] bg-primary">
       <div className="container mx-auto text-white flex justify-between items-center h-full ">
@@ -17,35 +20,40 @@ const Header = () => {
         </div>
         <nav>
           <ul className="flex gap-x-3 transition-all">
-            <li className="px-[5px] py-[20px] font-assistant  font-medium hover:text-orange-200 hover cursor-pointer">
+            <li className="px-[5px] py-[20px] font-assistant  font-medium  hover:text-sixth hover cursor-pointer transition-all">
               <a href="">ANASAYFA</a>
             </li>
-            <li className="px-[5px] py-[20px] font-assistant font-medium hover:text-orange-200 hover cursor-pointer">
+            <li className="px-[5px] py-[20px] font-assistant font-medium  hover:text-sixth hover cursor-pointer transition-all">
               <a href="">KATEGORİ</a>
             </li>
-            <li className="px-[5px] py-[20px] font-assistant font-medium hover:text-orange-200 hover cursor-pointer">
+            <li className="px-[5px] py-[20px] font-assistant font-medium  hover:text-sixth hover cursor-pointer transition-all">
               <a href="">HAKKIMIZDA</a>
             </li>
-            <li className="px-[5px] py-[20px] font-assistant font-medium hover:text-orange-200  hover cursor-pointer">
+            <li className="px-[5px] py-[20px] font-assistant font-medium  hover:text-sixth cursor-pointer transition-all">
               <a href="">İLETİŞİM</a>
             </li>
           </ul>
         </nav>
-        <div className="flex gap-x-4 items-center justify-center">
-          <a href="">
-            <FaUser className="h-7" />
-          </a>
-          <a href="">
-            <FaShoppingCart className="h-[20px]" />
-          </a>
-          <a href="">
-            <FaSearch />
-          </a>
+        <div className="flex gap-x-4 items-center justify-center ">
+          <button>
+            <FaUser className="h-7  hover:text-sixth transition-all" />
+          </button>
+          <button>
+            <FaShoppingCart className="h-7 hover:text-sixth transition-all" />
+          </button>
+          <button onClick={() => setIsSearchModal(!isSearchModal)}>
+            <FaSearch className="h-7  hover:text-sixth transition-all" />
+          </button>
           <button className="btn-primary font-assistant text-[16px] font-medium hover:bg-white hover:text-teal-700 transition-all ">
             Online Sipariş
           </button>
         </div>
       </div>
+      {isSearchModal && (
+        <OutsideClickHandler onOutsideClick={()=> setIsSearchModal(false)}>
+          <div className="w-40 h-40 bg- bg-sixth ">Modal Section </div>
+        </OutsideClickHandler>
+      )}
     </div>
   );
 };

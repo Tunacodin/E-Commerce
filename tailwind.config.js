@@ -6,12 +6,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        screens: {
+          xs: "375px",
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1140px",
+          "2xl": "1140px",
+        },
+      },
       colors: {
         primary: "#2D4356",
         secondary: "#435B66",
         third: "#A76F6F",
         fourth: "#EAB2A0",
         fifth: "#A384AE",
+        sixth: "rgb(254, 215,170)",
       },
       fontFamily: {
         assistant: ["Montserrat", "sans-serif"],

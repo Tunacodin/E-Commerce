@@ -3,7 +3,7 @@ import { Carousel } from "../../components/Carousel";
 
 const Index = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen w-full">
       <div className="relative h-full w-full">
         <Carousel />
       </div>

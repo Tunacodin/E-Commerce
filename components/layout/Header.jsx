@@ -17,14 +17,18 @@ const Header = () => {
       const [isMenuModal, setIsMenuModal] = useState(false);
 
   return (
-    <div className="h-[5rem] bg-primary">
-      <div className="container mx-auto text-white flex justify-between items-center h-full ">
+    <div className="h-[64px]  bg-primary sm:h-full ">
+      <div
+        className={`container mx-auto text-white flex justify-between items-center h-full ${
+          isMenuModal === true && "mt-[-40px]"
+        }`}
+      >
         <div>
           <Logo />
         </div>
         <nav
-          className={`sm:static absolute top-0 left-0 place-content-center sm:w-auto sm:h-auto w-full h-full sm:text-white sm:bg-transparent bg-white sm:flex hidden text-black ${
-            isMenuModal === true && "!grid place-content-center"
+          className={`sm:static absolute z-40 sm:z-0 top-0 left-0 place-content-center sm:w-auto sm:h-auto w-full h-screen sm:text-white sm:bg-transparent bg-white sm:flex hidden text-black ${
+            isMenuModal === true && "!grid place-content-center "
           }`}
         >
           <ul className="flex gap-x-3 sm:flex-row flex-col items-center transition-all">
@@ -46,7 +50,7 @@ const Header = () => {
               className="absolute top-4 right-4 text-black z-50"
               onClick={() => setIsMenuModal(false)}
             >
-              <GiCancel size={25} className="transition-all"/>
+              <GiCancel size={25} className="transition-all" />
             </button>
           )}
         </nav>

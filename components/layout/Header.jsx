@@ -17,7 +17,7 @@ const Header = () => {
       const [isMenuModal, setIsMenuModal] = useState(false);
 
   return (
-    <div className="h-[64px]  bg-primary sm:h-full ">
+    <div className="h-[74px]  bg-primary  ">
       <div
         className={`container mx-auto text-white flex justify-between items-center h-full ${
           isMenuModal === true && "mt-[-40px]"

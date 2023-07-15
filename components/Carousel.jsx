@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Title from "./ui/Title";
 import Slider from "react-slick";
+
 export const Carousel = () => {
     const settings = {
       dots: true,
@@ -24,16 +25,17 @@ export const Carousel = () => {
   return (
     <div className="h-screen w-full container mx-auto">
       <div className="absolute top-0 left-0 w-full h-full ">
-        <div className="relative h-screen w-full ">
+        <div className="relative rounded-b-xl  h-screen w-full sm:rounded-3xl shadow-2xl shadow-slate-500  ">
           <Image
             src="/Images/Tahta mermer.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
-            className="opacity-100 "
+            className="opacity-100 rounded-b-xl sm:rounded-b-3xl"
           />
         </div>
       </div>
+
       <Slider {...settings}>
         <div className="mt-40 ">
           <div className=" text-white top-48 flex flex-col items-start gap-y-10 px-5 ">

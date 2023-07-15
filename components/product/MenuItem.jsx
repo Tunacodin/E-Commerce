@@ -1,29 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { FaShoppingCart } from 'react-icons/fa';
 
 const MenuItem = () => {
+   const [isHovered, setIsHovered] = useState(false);
+
+   const handleMouseEnter = () => {
+     setIsHovered(true);
+   };
+
+   const handleMouseLeave = () => {
+     setIsHovered(false);
+   };
   return (
-    <div
-      className="bg-secondary w-full
-    "
-    >
-      <div className='border-2 flex flex-col w-1/3 justify-center items-center'>
-        <div className="relative w-72 h-72 z-50 bg-black m-3">
-          <Image src="/Images/Tepsiler/altın.jpg" layout="fill" />
-              </div>
-              <div className='flex flex-col items-center justify-center'>
-                  <h3 className='font-assistant text-lg font-bold p-2'>Ürün 1</h3>
-                  <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa modi ratione sequi facere officiis nostrum! Optio aspernatur quia ipsam neque commodi laboriosam nemo dolore doloremque voluptates accusamus. Facere, quisquam excepturi?</p>
-              </div>
-              <div className='flex justify-evenly items-center w-full'>
-                  <span>$20</span>
-                  <button className=' '>
-                      <FaShoppingCart/>
-                  </button>
-              </div>
+    <div className="bg-third w-72 relative shadow-2xl text-white font-assistant rounded-lg flex flex-col justify-center items-center">
+      <div className=" absolute bg-sixth bottom-[168px] left-0">
+        <h2>Yeni Ürün</h2>
       </div>
-      
+      <div className="relative w-72 h-96 shadow-2xl ">
+        {isHovered ? (
+          <Image
+            src="/Images/Tepsiler/altın.jpg"
+            layout="fill"
+            alt="Hovered Image"
+            onMouseLeave={handleMouseLeave}
+            className="transition-all duration-1000"
+          />
+        ) : (
+          <Image
+            src="/Images/ikili mermer-2.jpg"
+            layout="fill"
+            alt="Default Image"
+            onMouseEnter={handleMouseEnter}
+            className="transition-all duration-1000"
+          />
+        )}
+      </div>
+
+      <div className="flex flex-col justify-center items-center gap-y-3">
+        <h3 className="font-dancing font-bold text-xl pt-4 text-center">
+          HARMONY
+        </h3>
+        <p className="text-center">
+          NERGİS Mermer Söz / Nişan / Sunum Tepsisi - Mat Altın Düz Kulplu
+          Boyut: 70*28
+        </p>
+      </div>
+
+      <div className="relative flex flex-row w-72 justify-between  items-center p-5">
+        <div className="absolute rounded-br-xl w-40 h-12 bottom-2 bg-fourth left-[-18px]"></div>
+        <span className="text-lg opacity-80 line-through text-white ">
+          346₺
+        </span>
+        <span className="font-semibold text-xl text-gray-800 absolute bottom-[7px] ml-9 ">
+          299₺
+        </span>
+        <button>
+          <FaShoppingCart
+            size="40px"
+            className="font-bold hover:bg-slate-800 hover:text-white transition-all text-gray-900 bg-white rounded-xl p-2"
+          />
+        </button>
+      </div>
     </div>
   );
 }

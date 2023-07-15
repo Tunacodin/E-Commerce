@@ -20,7 +20,7 @@ font-family: 'Philosopher', sans-serif;
 }
 
 .btn-primary{
-@apply p-3 bg-secondary rounded-3xl px-3 font-assistant text-[16px] font-medium hover:bg-white hover:text-secondary transition-all 
+@apply p-3 bg-fourth rounded-3xl px-3 font-assistant text-[16px] font-medium hover:bg-white hover:text-secondary transition-all 
 }
 
 .slick-dots{
@@ -28,4 +28,10 @@ font-family: 'Philosopher', sans-serif;
 }
 .slick-dots .slick-active div{
   @apply  bg-secondary w-4 h-4;
+}
+
+ img:hover {
+ -ms-transform: scale(1.3); /* IE 9 */
+ -webkit-transform: scale(1.3); /* Safari 3-8 */
+  transform: scale(1.3); 
 }

@@ -7,7 +7,6 @@ const Index = () => {
   return (
     <div className="relative ">
       <Carousel />
-      <Features />
       <MenuWrapper/>
     </div>
   );

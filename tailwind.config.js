@@ -18,11 +18,11 @@ module.exports = {
       },
       colors: {
         primary: "#6527BE",
-        secondary: "#9972EA",
-        third: "#A76F6F",
-        fourth: "#EAB2A0",
-        fifth: "#A384AE",
-        sixth: "rgb(254, 215,170)",
+        secondary: "#FF9671",
+        third: "#E57B89",
+        fourth: "#A166F9",
+        fifth: "#D14D72",
+        sixth: "#4E31AA",
       },
       fontFamily: {
         assistant: ["Montserrat", "sans-serif"],

@@ -14,7 +14,7 @@ export const Carousel = () => {
       autoplay: true,
       pauseOnHover: true,
       arrows: false,
-
+      
 
       customPaging: (i) => (
         <div className="w-4 h-4 border ml-5 bg-white rounded-full mt-10 ">
@@ -24,15 +24,9 @@ export const Carousel = () => {
     };
   return (
     <div className="h-screen w-full container mx-auto">
-      <div className="absolute top-0 left-0 w-full h-full ">
-        <div className="relative rounded-b-xl  h-screen w-full sm:rounded-3xl shadow-2xl shadow-slate-500  ">
-          <Image
-            src="/Images/Tahta mermer.jpg"
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            className="opacity-100 rounded-b-xl sm:rounded-b-3xl"
-          />
+      <div className="absolute top-0 left-0 w-full h-[1000px] ">
+        <div className="relative pointer-events-none rounded-b-xl h-screen w-full sm:rounded-3xl shadow-2xl shadow-slate-500  ">
+          <Image src="/Images/siyah mermer.png" layout="fill" />
         </div>
       </div>
 

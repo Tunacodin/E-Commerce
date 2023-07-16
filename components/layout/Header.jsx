@@ -14,7 +14,8 @@ import Title from "../ui/Title";
 import Search from "../ui/Search";
 const Header = () => {
       const [isSearchModal, setIsSearchModal] = useState(false);
-      const [isMenuModal, setIsMenuModal] = useState(false);
+  const [isMenuModal, setIsMenuModal] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="h-[74px]  bg-third  ">
